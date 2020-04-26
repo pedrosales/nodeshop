@@ -6,7 +6,7 @@ var sendgrid = require('sendgrid')(config.sendgridKey);
 exports.send = async (to, subject, body) => {
     sendgrid.send({
         to: to,
-        from: 'pedroivossantos@gmail.com',
+        from: 'hello@pivo88.io',
         subject: subject,
         html: body
     });
