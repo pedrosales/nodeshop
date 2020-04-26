@@ -1,9 +1,17 @@
 'use strict';
 
-const mongoose = require('mongoose');
-const Customer = mongoose.model('Customer');
 const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/customer-repository');
+
+exports.get = async (req, res, next) => {
+
+    try {
+        var data = await repository.get();
+        res.status(200).send(data);
+    } catch (error) {
+        res.status(500).send({ message: 'Falha ao processar requisição' })
+    }
+};
 
 exports.post = async (req, res, next) => {
     let contract = new ValidationContract();
