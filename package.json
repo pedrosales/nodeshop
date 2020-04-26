@@ -16,7 +16,8 @@
     "guid": "0.0.12",
     "http": "0.0.1-security",
     "md5": "^2.2.1",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
