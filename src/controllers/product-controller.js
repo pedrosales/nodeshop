@@ -11,8 +11,6 @@ exports.post = (req, res, next) => {
         console.log(error);
         res.status(400).send({ message: 'Falha ao cadastrar produto', data: error });
     });
-
-
 };
 
 exports.put = (req, res, next) => {
@@ -22,4 +20,14 @@ exports.put = (req, res, next) => {
 
 exports.delete = (req, res, next) => {
     res.status(200).send(req.body);
+};
+
+exports.get = (req, res, next) => {
+    Product.find({ active: true }, 'title price slug').then(data => {
+        res.status(200).send(data);
+    }
+    ).catch(error => {
+        console.log(error);
+        res.status(400).send({ message: 'Falha ao cadastrar produto', data: error });
+    });
 };
