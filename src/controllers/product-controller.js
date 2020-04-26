@@ -54,3 +54,13 @@ exports.getById = (req, res, next) => {
         res.status(400).send({ message: 'Falha ao recuperar produto', data: error });
     });
 };
+
+exports.getByTag = (req, res, next) => {
+    Product.find({ tags: req.params.tag, active: true }).then(data => {
+        res.status(200).send(data);
+    }
+    ).catch(error => {
+        console.log(error);
+        res.status(400).send({ message: 'Falha ao recuperar produto', data: error });
+    });
+};
