@@ -10,6 +10,7 @@ mongoose.connect('mongodb+srv://sa:P3dr09673@api1972-sd6wj.gcp.mongodb.net/test?
 // Carregar os models
 const Product = require('../src/models/product');
 const Customer = require('../src/models/customer');
+const Order = require('../src/models/order');
 
 // Carrega rotas
 const indexRoute = require('./routes/index-route');
