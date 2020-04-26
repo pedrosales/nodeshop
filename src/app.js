@@ -7,6 +7,9 @@ const app = express();
 // Connecta com mongo
 mongoose.connect('mongodb+srv://sa:P3dr09673@api1972-sd6wj.gcp.mongodb.net/test?retryWrites=true&w=majority');
 
+// Carregar os models
+const Product = require('../src/models/product');
+
 // Carrega rotas
 const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
