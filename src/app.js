@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 
 // Connecta com mongo
-mongoose.connect('mongodb+srv://sa:P3dr09673@api1972-sd6wj.gcp.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect(config.connectionString);
 
 // Carregar os models
 const Product = require('../src/models/product');
