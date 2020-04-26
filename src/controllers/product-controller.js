@@ -41,6 +41,16 @@ exports.getBySlug = (req, res, next) => {
     }
     ).catch(error => {
         console.log(error);
-        res.status(400).send({ message: 'Falha ao cadastrar produto', data: error });
+        res.status(400).send({ message: 'Falha ao recuperar produto', data: error });
+    });
+};
+
+exports.getById = (req, res, next) => {
+    Product.findById(req.params.id).then(data => {
+        res.status(200).send(data);
+    }
+    ).catch(error => {
+        console.log(error);
+        res.status(400).send({ message: 'Falha ao recuperar produto', data: error });
     });
 };
